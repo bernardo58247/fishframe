@@ -1,0 +1,3 @@
+function mikudayo
+  echo "mikudayo (you found an Easter egg!)"
+end
