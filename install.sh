@@ -11,7 +11,7 @@ fi
 
 git clone https://github.com/bernardo58247/fishframe && cd fishframe
 
-cp -r fishframe ~/.fishframe
+cp -r .fishframe ~/.fishframe
 
 cat << EOF >> ~/.config/fish/config.fish
  if test -f ~/.fishframe/init.fish
