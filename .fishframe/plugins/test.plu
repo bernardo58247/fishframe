@@ -1,1 +1,2 @@
 echo "if you are seeing this, it means that Fishframe is working!"
+echo "you can create, add or remove plugins in ~/.fishframe/plugins, and themes in ~/.fishframe/themes"
