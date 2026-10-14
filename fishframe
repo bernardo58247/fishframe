@@ -1,0 +1,21 @@
+#!/usr/bin/env fish
+
+set arg "$argv"
+
+switch "$arg[1]"
+  case load
+    for file in ~/.fishframe/plugins/*.plu
+      test -f "$file"; or continue
+      source "$file"
+    end
+
+  case '' help -h --help
+    echo "Usage: fishframe <command>"
+    echo 
+    echo "help - shows this help"
+    echo "load - reloads the plugins and theme"
+  
+  case *
+    echo "Fishframe: unknown command!"
+    echo "run fishframe help for help"
+end
