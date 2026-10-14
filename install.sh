@@ -18,3 +18,5 @@ cat << EOF >> ~/.config/fish/config.fish
    source ~/.fishframe/init.fish
  end
 EOF
+
+cp ./fishframe /usr/local/bin/fishframe
