@@ -5,5 +5,5 @@ end
 
 for theme in ~/.fishframe/themes/*.theme
   test -f "$theme"; or continue
-  source "$file"
+  source "$theme"
 end
