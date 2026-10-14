@@ -3,7 +3,10 @@ for file in ~/.fishframe/plugins/*.plu
   source "$file"
 end
 
-for theme in ~/.fishframe/themes/*.theme
-  test -f "$theme"; or continue
-  source "$theme"
+if test -f "$HOME/.fishframe/themes/${FISHFRAME_THEME}.theme"
+  source "$HOME/.fishframe/themes/${FISHFRAME_THEME}.theme"
+else
+  echo "Fishframe: Theme not found: ${FISHFRAME_THEME}"
+  echo "Fishframe: Falling back to the default theme..."
+  source "$HOME/.fishframe/themes/default.theme"
 end

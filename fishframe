@@ -14,7 +14,11 @@ switch "$arg[1]"
     echo 
     echo "help - shows this help"
     echo "load - reloads the plugins and theme"
-  
+
+  case theme
+    set -gx FISHFRAME_THEME "$arg[2]"
+    echo "setted theme to $arg[2] with success!"
+
   case *
     echo "Fishframe: unknown command!"
     echo "run fishframe help for help"
