@@ -19,4 +19,10 @@ cat << EOF >> ~/.config/fish/config.fish
  end
 EOF
 
-cp ./fishframe /usr/local/bin/fishframe
+mkdir -p ~/.local/bin
+
+cp ./fishframe ~/.local/bin
+
+fish_add_path "$HOME/.local/bin"
+
+echo 'fish_add_path "$HOME/.local/bin"' > ~/.config/fish/config.fish
