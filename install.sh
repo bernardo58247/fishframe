@@ -7,4 +7,12 @@ else
   exit 1
 fi
 
-git clone 
+git clone https://github.com/bernardo58247/fishframe && cd fishframe
+
+cp -r .fishframe ~
+
+cat << EOF >> ~/.config/fish/config.fish
+ if test -f ~/.fishframe/init.fish
+   source ~/.fishframe/init.fish
+ end
+EOF
