@@ -18,6 +18,18 @@ switch "$arg[1]"
   case theme
     set -gx FISHFRAME_THEME "$arg[2]"
     echo "setted theme to $arg[2] with success!"
+  case list
+    for file in $HOME/.fishframe/plugins/*.plu
+      test -f "$file"; or continue
+      set name (string replace -r '\.plu$' ''   (basename "$file"))
+      echo "Plugin: $name"
+    end
+
+    for file in $HOME/.fishframe/themes/*.theme
+      test -f "$file"; or continue
+      set name (string replace -r '\.theme$' ''   (basename "$file"))
+      echo "Theme: $name"
+    end
 
   case *
     echo "Fishframe: unknown command!"
