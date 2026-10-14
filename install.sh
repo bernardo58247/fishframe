@@ -12,6 +12,7 @@ fi
 git clone https://github.com/bernardo58247/fishframe && cd fishframe
 
 cp -r .fishframe ~/.fishframe
+mkdir -p "$HOME/.config/fish"
 
 cat << EOF >> ~/.config/fish/config.fish
  if test -f ~/.fishframe/init.fish
@@ -19,10 +20,9 @@ cat << EOF >> ~/.config/fish/config.fish
  end
 EOF
 
-mkdir -p ~/.local/bin
+mkdir -p "$HOME/.local/bin"
+cp ./fishframe "$HOME/.local/bin/fishframe"
 
-cp ./fishframe ~/.local/bin
-
-fish_add_path "$HOME/.local/bin"
-
-echo 'fish_add_path "$HOME/.local/bin"' > ~/.config/fish/config.fish
+if ! grep -Fq 'fish_add_path "$HOME/.local/bin"' "$HOME/.config/fish/config.fish"; then
+    echo 'fish_add_path "$HOME/.local/bin"' >> "$HOME/.config/fish/config.fish"
+fi
